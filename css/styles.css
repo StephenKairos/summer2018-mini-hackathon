@@ -1,10 +1,20 @@
-* {
-  margin: 0;
-  padding: 0;
-  border: none;
-  font-family: Arial, sans-serif;
+h1 {
+	font-size: 80px;
+}
+
+.big-text{
+	font-size: 50px;
+}
+
+p {
+	color: white;
 }
 
 body {
-  font-size: 12px;
+	background-color: #272822;
+	font-size: 18px;
+}
+
+h1, h2, h3, h4 {
+	font-family: Do Hyeon, monospace;
 }
