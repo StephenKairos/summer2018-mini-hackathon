@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+
 <!doctype html>
 <style>
 h3{
@@ -6,7 +6,7 @@ h3{
 	font-family: monospace;
 }
 .big-text{
-	font-size: 50px;
+	font-size: 80px;
 }
 
 </style>
@@ -19,15 +19,48 @@ h3{
   <meta name="description" content="Characters">
   <meta name="author" content="Stephen and Marjorie">
 
-  <link rel="stylesheet" href="css/styles.css">
+       <link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet" type="text/css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+      <link rel="stylesheet" href="css/styles.css">
 
 </head>
 
 <body>
+	<nav class="navbar navbar-default">
+         <div class="container-fluid">
+            <div class="navbar-header">
+               <a class="navbar-brand" href="#">The Easy RPG System 1.0</a>
+            </div>
+            <ul class="nav navbar-nav">
+               <li><a href="index.html">Home</a></li>
+               <li><a href="login.html">Login</a></li>
+               <li><a href="profile.html">Profile</a></li>
+               <li class="active"><a href="characters.html">Characters</a></li>
+            </ul>
+         </div>
+      </nav>
 	<div class="container-fluid">
 		<div class="row">
-			<h3 class="text-primary">Character Sheet</h3>
+			<h2 class="text-primary big-text text-center">Character Sheet</h2>
 		</div>
+
+		<div class="row">
+			<div class="card" style="width: 28rem;">
+			  	<div class="card-body">
+			    	<button class="btn-secondary btn-lg main-title-text text-center" style="width: 26rem;">Character 1</button>
+			    	<p class="text-center">Character Name</p>
+			    	<p class="text-center">Updated: Date</p>
+			    	
+		  		</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="card" style="width: 28rem;">
+			  	<div class="card-body">
+			    	<button class="btn-primary btn-lg main-title-text"> + Create a New Character</h2>
+		  		</div>
+			</div>
+		</div>s
 	</div>
 </body>
 </html>

@@ -29,5 +29,10 @@ h1, h2, h3, h4 {
 }
 
 .card-body p {
-		color: #272822;
+	color: #272822;
+}
+
+.main-title-text {
+	font-family: Do Hyeon, monospace;
+	font-size: 30px;
 }
