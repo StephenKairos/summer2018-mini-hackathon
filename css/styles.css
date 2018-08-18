@@ -18,3 +18,16 @@ body {
 h1, h2, h3, h4 {
 	font-family: Do Hyeon, monospace;
 }
+
+.card {
+	background-color: white;
+	margin: 30px auto; 
+    float: none; 
+	margin-bottom: 10px;
+	border-radius: 10px;
+	padding: 10px;
+}
+
+.card-body p {
+		color: #272822;
+}
