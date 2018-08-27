@@ -1,42 +1,79 @@
 <!doctype html>
-
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-
-  <title>Login</title>
-  <meta name="description" content="Login">
-  <meta name="author" content="Stephen and Marjorie">
-  <link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
-  <link rel="stylesheet" href="css/styles.css">
-
-</head>
-
-<body>
-	<div class="containter-fluid">
-		<div class="row">
-			<div class="card" style="width: 40rem;">
-			  	<div class="card-body">
-			    	<h2 class="text-center card-title">Log In</h2>
-			    	<form>
-					  <div class="form-group">
-					    <label for="exampleInputEmail1">Email address</label>
-					    <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-					  </div>
-					  <div class="form-group">
-					    <label for="exampleInputPassword1">Password</label>
-					    <input type="password" class="form-control" id="InputPassword1" placeholder="Password">
-					  </div>
-					  <div class="form-group form-check">
-					    <input type="checkbox" class="form-check-input" id="Check1">
-					    <label class="form-check-label" for="exampleCheck1">Remember Me</label>
-					  </div>
-					  <button type="submit" class="btn btn-primary">Submit</button>
-					</form>
-		  		</div>
-			</div>
-		</div>
-	</div>
-</body>
+    <head>
+        <meta charset="utf-8">
+        <title>Login</title>
+        <script src="https://www.gstatic.com/firebasejs/5.4.0/firebase.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+              apiKey: "AIzaSyBfJGpmK8ccur2F-Q8yN3k27C_TTuyLCb4",
+              authDomain: "easy-rpg-system.firebaseapp.com",
+              databaseURL: "https://easy-rpg-system.firebaseio.com",
+              projectId: "easy-rpg-system",
+              storageBucket: "easy-rpg-system.appspot.com",
+              messagingSenderId: "569008784961"
+            };
+            firebase.initializeApp(config);
+        </script>
+        <script src="https://cdn.firebase.com/libs/firebaseui/3.3.0/firebaseui.js"></script>
+        <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.3.0/firebaseui.css" />
+        <script type="text/javascript">
+            // FirebaseUI config.
+            var uiConfig = {
+              signInSuccessUrl: 'profile.html',
+              signInOptions: [
+                // Leave the lines as is for the providers you want to offer your users.
+                firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+                firebase.auth.EmailAuthProvider.PROVIDER_ID,
+                firebaseui.auth.AnonymousAuthProvider.PROVIDER_ID
+              ],
+              // tosUrl and privacyPolicyUrl accept either url string or a callback
+              // function.
+              // Terms of service url/callback.
+              tosUrl: '<your-tos-url>',
+              // Privacy policy url/callback.
+              privacyPolicyUrl: function() {
+                window.location.assign('<your-privacy-policy-url>');
+              }
+            };
+            
+            // Initialize the FirebaseUI Widget using Firebase.
+            var ui = new firebaseui.auth.AuthUI(firebase.auth());
+            // The start method will wait until the DOM is loaded.
+            ui.start('#firebaseui-auth-container', uiConfig);
+        </script>
+        <meta name="description" content="Login">
+        <meta name="author" content="Stephen and Marjorie">
+        <link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+        <!--<div class="containter-fluid">
+            <div class="row">
+                <div class="card" style="width: 40rem;">
+                    <div class="card-body">
+                        <h2 class="text-center card-title">Log In</h2>
+                        <form>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email address</label>
+                                <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Password</label>
+                                <input type="password" class="form-control" id="InputPassword1" placeholder="Password">
+                            </div>
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="Check1">
+                                <label class="form-check-label" for="Check1">Remember Me</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div> -->
+    		<div id="firebaseui-auth-container"></div>
+        </div>
+    </body>
 </html>

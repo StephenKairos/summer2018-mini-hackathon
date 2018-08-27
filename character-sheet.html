@@ -5,14 +5,104 @@
   <meta charset="utf-8">
 
   <title>Character</title>
-  <meta name="description" content="Character">
-  <meta name="author" content="Stephen and Marjorie">
 
+  <link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
   <link rel="stylesheet" href="css/styles.css">
 
+  <meta name="description" content="Character">
+  <meta name="author" content="Stephen and Marjorie">
 </head>
 
 <body>
-  
+	<nav class="navbar navbar-default">
+	 <div class="container-fluid">
+	    <div class="navbar-header">
+	       <a class="navbar-brand" href="#">The Easy RPG System 1.0</a>
+	    </div>
+	    <ul class="nav navbar-nav">
+	       <li><a href="index.html">Home</a></li>
+	       <li><a href="login.html">Login</a></li>
+	       <li><a href="profile.html">Profile</a></li>
+	       <li class="active"><a href="characters.html">Characters</a></li>
+	    </ul>
+	 </div>
+	</nav>
+
+	<div class="container-fluid" id="character-sheet">
+		<div id="character-app" class="row">
+			<div class="card" style="width: 40rem;">
+				<img class="card-img-top img-responsive d-block" src="res/img/gaston-profile.jpg" alt="Profile Picture"></img>
+				<div class="card-header">
+			    	<h2 class="text-center card-title">{{ charName }}</h2>
+				</div>
+			</div>
+			<div class="card" style="width: 120rem;">
+				<div class="card-body">
+				    <div class="row">
+				        <div class="col-xs-4">
+                            <h3 class="text-center">Level {{ levelNumber }}</h3>
+				        </div>
+				        <div class="col-xs-8">
+				        	<h3 class="text-center">Most Notable Skill: {{ notableSkill }}</h3>
+				        </div>
+			        </div>
+			        <div class="row">
+				        <div class="col-xs-2">
+                            <h3 class="text-center">Body</h3>
+                            <h3 class="text-center">{{ bodyStat }}</h3>
+				        </div>
+				        <div class="col-xs-2">
+                            <h3 class="text-center">Mind</h3>
+                            <h3 class="text-center">{{ mindStat }}</h3>
+				        </div>
+				        <div class="col-xs-2">
+                            <h3 class="text-center">Soul</h3>
+                            <h3 class="text-center">{{ soulStat }}</h3>
+				        </div>
+				        <div class="col-xs-2">
+                            <h3 class="text-center">Agility</h3>
+                            <h3 class="text-center">{{ agilityStat }}</h3>
+				        </div>
+				        <div class="col-xs-2">
+                            <h3 class="text-center">Health</h3>
+                            <h3 class="text-center">{{ healthStat }}</h3>
+				        </div>
+				        <div class="col-xs-2">
+                            <h3 class="text-center">Willpower</h3>
+                            <h3 class="text-center">{{ willpowerStat }}</h3>
+				        </div>
+			        </div>
+				</div>
+			</div>
+			<div class="card" style="width: 120rem;">
+				<div class="card-header">
+			    	<h2 class="text-center card-title">Edit Character</h2>
+				</div>
+				<div class="card-body">
+				    <form>
+				    	<div class="row">
+					        <div class="col-xs-4 form-group">
+					        	<label for="levelNumber">Character Name</label>
+					            <input v-model="charName" type="text" class="form-control" id="charName" placeholder="Character Name">
+					        </div>
+					        <div class="col-xs-4 form-group">
+	                            <label for="levelNumber">Level {{ levelNumber }}</label>
+					            <input v-model="levelNumber" type="text" class="form-control" id="levelNumber" placeholder="Level Number">
+					        </div>
+					        <div class="col-xs-4 form-group">
+					        	<label for="levelNumber">Most Notable Skill: {{ notableSkill }}</label>
+					            <input v-model="notableSkill" type="text" class="form-control" id="notableSkill" placeholder="Most Notable Skill">
+					        </div>
+				        </div>
+
+				        <button type="submit" class="btn btn-primary">Save</button>
+				    </form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+	<script src="js/main.js"></script>
 </body>
 </html>
